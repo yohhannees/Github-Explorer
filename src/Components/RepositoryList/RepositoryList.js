@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodeBranch, faStar } from '@fortawesome/free-solid-svg-icons';
+import  './repoList.css';
 
 const RepositoryList = () => {
     const repositories = useSelector((state) => state.repositories);
