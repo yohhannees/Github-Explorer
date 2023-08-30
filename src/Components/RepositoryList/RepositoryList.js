@@ -17,11 +17,17 @@ const RepositoryList = () => {
                 {repositories.map((repo) => (
                     <li key={repo.id}>
                         <div className="repo-details">
-                            <a href={repo.html_url}>{repo.name}</a>
+                            <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                                {repo.name}
+                            </a>
                         </div>
                         <div className="repo-icons">
-                            <span><FontAwesomeIcon icon={faStar} /> {repo.stargazers_count}</span>
-                            <span><FontAwesomeIcon icon={faCodeBranch} /> {repo.forks_count}</span>
+                            <span className='space'>
+                                <FontAwesomeIcon icon={faStar} /> {repo.stargazers_count}
+                            </span>
+                            <span className='space'>
+                                <FontAwesomeIcon icon={faCodeBranch} /> {repo.forks_count}
+                            </span>
                         </div>
                     </li>
                 ))}

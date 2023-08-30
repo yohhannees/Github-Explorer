@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCodeBranch, faUsers, faMapMarkerAlt, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import RepositoryList from '../RepositoryList/RepositoryList';
+import Stats from './Stats';
+import './userProfile.css';
+
 
 const UserProfile = () => {
     const user = useSelector((state) => state.user);
@@ -25,11 +28,13 @@ const UserProfile = () => {
                         <a href={`https://github.com/${user.login}`} target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faExternalLinkAlt} /> Go to GitHub Profile
                         </a>
+                        <Stats></Stats>
                     </div>
                 </div>
             </div>
             <div className='detail-card'> <RepositoryList /></div>
         </div>
+    
     );
 };
 

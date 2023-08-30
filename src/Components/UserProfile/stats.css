@@ -1,0 +1,11 @@
+.github-stats-container {
+    display: flex;
+    margin-left: 80px;
+    justify-content: center; /* Horizontally center the iframes */
+    
+}
+
+.iframe-container {
+    display: flex;
+    gap: 20px; /* Add some spacing between iframes */
+}
