@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCodeBranch, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const RepositoryList = () => {
     const repositories = useSelector((state) => state.repositories);
@@ -10,12 +12,20 @@ const RepositoryList = () => {
 
     return (
         <div className='repoList'>
-            <h3>Repositories</h3>
-            <ol className="repository-list">
+            <h3><FontAwesomeIcon icon={faCodeBranch} /> Repositories</h3>
+            <ul className="repository-list">
                 {repositories.map((repo) => (
-                    <li key={repo.id}><a href={repo.html_url}>{repo.name}</a></li>
+                    <li key={repo.id}>
+                        <div className="repo-details">
+                            <a href={repo.html_url}>{repo.name}</a>
+                        </div>
+                        <div className="repo-icons">
+                            <span><FontAwesomeIcon icon={faStar} /> {repo.stargazers_count}</span>
+                            <span><FontAwesomeIcon icon={faCodeBranch} /> {repo.forks_count}</span>
+                        </div>
+                    </li>
                 ))}
-            </ol>
+            </ul>
         </div>
     );
 };

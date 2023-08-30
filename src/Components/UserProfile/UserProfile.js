@@ -1,7 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faCodeBranch, faUsers, faMapMarkerAlt, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import RepositoryList from '../RepositoryList/RepositoryList';
+
 const UserProfile = () => {
     const user = useSelector((state) => state.user);
 
@@ -15,19 +18,15 @@ const UserProfile = () => {
                 <div className="card-body">
                     <img src={user.avatar_url} alt="Profile" />
                     <div className='profile-desc'>
-                        <h2>Name: {user.name}</h2>
-                        <p>Repositories: {user.public_repos}</p>
-                        <p>Followers: {user.followers}</p>
-                        <p>Location: {user.location}</p>
+                        <h2><FontAwesomeIcon icon={faUser} /> {user.name}</h2>
+                        <p><FontAwesomeIcon icon={faCodeBranch} /> Repositories: {user.public_repos}</p>
+                        <p><FontAwesomeIcon icon={faUsers} /> Followers: {user.followers}</p>
+                        <p><FontAwesomeIcon icon={faMapMarkerAlt} /> Location: {user.location}</p>
                         <a href={`https://github.com/${user.login}`} target="_blank" rel="noopener noreferrer">
-                            Go to GitHub Profile
+                            <FontAwesomeIcon icon={faExternalLinkAlt} /> Go to GitHub Profile
                         </a>
-
-
                     </div>
                 </div>
-
-
             </div>
             <div className='detail-card'> <RepositoryList /></div>
         </div>
