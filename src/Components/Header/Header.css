@@ -1,0 +1,68 @@
+/* header.css */
+.header-container {
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #454545;
+    white-space: pre-wrap;
+    transition: color 0.3s ease;
+    /* Prevents the logo from wrapping to the next line */
+}
+
+.logo:hover {
+
+    color: #555;
+
+}
+
+.nav-links-container {
+    flex-grow: 1;
+    /* Allow the nav-links container to grow and take available space */
+    overflow: hidden;
+    /* Hides overflowing content */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    /* Align the links to the right */
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #454545;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #555;
+}
+
+/* Additional styles to push content below the header */
+.app-container {
+    padding-top: 80px;
+    /* Adjust the padding value based on your header's height */
+}
